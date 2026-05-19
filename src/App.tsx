@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
-  Mail, Phone, MapPin, Sparkles, Menu, X, Trophy, Briefcase, Code, ArrowUpRight
+  Mail, Phone, MapPin, Sparkles, Menu, X, Trophy, Code
 } from 'lucide-react';
 
 interface Project {
@@ -145,30 +145,23 @@ export default function App() {
       "position": "Senior Customer Support Engineer",
       "location": "Berlin/Remote",
       "period": "Aug 2021 - Present",
-      "current": true,
       "description": [
         "Led root-cause investigations for 40+ high-priority enterprise escalations weekly, diving into server logs and proxies to fix infrastructure while maintaining a 98% SLA.",
         "Investigated network payloads and secure proxy logs to debug complex API failures.",
         "Debugged customer API integrations and delivered detailed bug reports to Engineering.",
         "Built internal tools using Python and AI assistants to parse and analyze complex system logs, which reduced our manual troubleshooting time by around 30 %.",
         "Wrote technical documentation and knowledge base articles, turning one-off bug fixes into reusable resources for the support team."
-      ],
-      "technologies": []
+      ]
     },
     {
       "id": "exp-2",
-      "company": "DXC Technology",
-      "position": "Tech Support Analyst",
-      "location": "Bangalore",
-      "period": "Jul 2016 - Oct 2019",
-      "current": false,
+      "company": "Sauce Labs GmbH",
+      "position": "Customer Support Engineer",
+      "location": "Berlin/Remote",
+      "period": "Aug 2020 - Aug 2021",
       "description": [
-        "Provided global technical support for enterprise clients, resolving critical system outages across APJ, EMEA, and the Americas .",
-        "Managed complex support workflows and prioritized high-severity production incidents using Jira, Salesforce, and ServiceNow.",
-        "Escalated complex issues with clear technical context, working closely with backend engineering to speed up bug resolution.",
-        "Diagnosed system integration errors and managed secure access protocols to help streamline the enterprise onboarding process."
-      ],
-      "technologies": []
+        "Provided technical support for Sauce Labs' Continuous Testing Cloud, resolving complex issues related to automated testing, CI/CD pipelines, and integrations."
+      ]
     }
   ],
   "skills": [
@@ -236,11 +229,10 @@ export default function App() {
   "education": [
     {
       "id": "edu-1",
-      "institution": "ITER Bhubaneswar",
-      "degree": "India",
-      "fieldOfStudy": "",
-      "location": "United States",
-      "period": ""
+      "institution": "Technische Universität Berlin",
+      "degree": "Master of Science",
+      "fieldOfStudy": "Computer Science",
+      "period": "Oct 2018 - Mar 2021",
     }
   ],
   "projects": [],
@@ -521,7 +513,7 @@ export default function App() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Location</div>
+                      <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Location</div>
                       <div className={`text-sm font-bold ${textHeading}`}>{resumeData.personal.location || "Remote"}</div>
                     </div>
                   </div>
