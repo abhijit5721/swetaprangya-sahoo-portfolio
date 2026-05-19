@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Mail, Phone, MapPin, Sparkles, Menu, X, Trophy, Code
 } from 'lucide-react';
+import Hero3DModel from './components/Hero3DModel';
 
 interface Project {
   id: string;
