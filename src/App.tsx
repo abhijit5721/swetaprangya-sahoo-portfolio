@@ -126,7 +126,7 @@ export default function App() {
   const resumeData: ResumeData = {
   "personal": {
     "name": "SWETAPRANGYA SAHOO",
-    "title": "Technical Customer Support Engineer | 8+ Years Experience (5 Years in B2B SaaS)",
+    "title": "Technical Customer Support Engineer | 8+ Years Experience (5 Years in B2B SaaS) - Test",
     "subtitle": "",
     "bio": "Technical Customer Support Engineer | 8+ Years Experience (5 Years in B2B SaaS) Award-winning S enior Support Engineer specializing in log analysis, network debugging, and resolving complex enterprise escalations. I excel at finding the root cause of API and integration failures, working directly with engineering to improve the core product.",
     "avatar": "SS",
@@ -1021,7 +1021,7 @@ export default function App() {
                       <div className={`w-6 h-6 rounded-lg ${colors.bg} flex items-center justify-center text-white font-black text-[10px]`}>
                         {resumeData.personal.name.substring(0, 1)}
                       </div>
-                      <span className="text-xs font-black tracking-tight uppercase">Navigation</span>
+                      <span className="text-xs font-bold uppercase tracking-widest">Navigation</span>
                     </div>
                     <button 
                       onClick={() => setIsMobileMenuOpen(false)}
