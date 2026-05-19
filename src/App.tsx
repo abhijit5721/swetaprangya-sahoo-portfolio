@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
-  Mail, Phone, MapPin, Sparkles, Menu, X, Trophy, Code
+  Mail, Phone, MapPin, Sparkles, Menu, X, Trophy, Briefcase, Code, ArrowUpRight
 } from 'lucide-react';
 
 interface Project {
@@ -145,13 +145,15 @@ export default function App() {
       "position": "Senior Customer Support Engineer",
       "location": "Berlin/Remote",
       "period": "Aug 2021 - Present",
+      "current": true,
       "description": [
         "Led root-cause investigations for 40+ high-priority enterprise escalations weekly, diving into server logs and proxies to fix infrastructure while maintaining a 98% SLA.",
         "Investigated network payloads and secure proxy logs to debug complex API failures.",
         "Debugged customer API integrations and delivered detailed bug reports to Engineering.",
         "Built internal tools using Python and AI assistants to parse and analyze complex system logs, which reduced our manual troubleshooting time by around 30 %.",
         "Wrote technical documentation and knowledge base articles, turning one-off bug fixes into reusable resources for the support team."
-      ]
+      ],
+      "technologies": []
     },
     {
       "id": "exp-2",
@@ -159,12 +161,14 @@ export default function App() {
       "position": "Tech Support Analyst",
       "location": "Bangalore",
       "period": "Jul 2016 - Oct 2019",
+      "current": false,
       "description": [
         "Provided global technical support for enterprise clients, resolving critical system outages across APJ, EMEA, and the Americas .",
         "Managed complex support workflows and prioritized high-severity production incidents using Jira, Salesforce, and ServiceNow.",
         "Escalated complex issues with clear technical context, working closely with backend engineering to speed up bug resolution.",
         "Diagnosed system integration errors and managed secure access protocols to help streamline the enterprise onboarding process."
-      ]
+      ],
+      "technologies": []
     }
   ],
   "skills": [
@@ -235,6 +239,7 @@ export default function App() {
       "institution": "ITER Bhubaneswar",
       "degree": "India",
       "fieldOfStudy": "",
+      "location": "United States",
       "period": ""
     }
   ],
@@ -252,7 +257,8 @@ export default function App() {
       "issuer": "Verification Body",
       "date": "2024"
     }
-  ]
+  ],
+  "testimonials": []
 };
   const theme: ThemeSettings = {
   "id": "creative",
@@ -274,15 +280,15 @@ export default function App() {
   const textHeading = isDark ? 'text-white' : 'text-slate-900';
   const textBody = isDark ? 'text-slate-300' : 'text-slate-700';
   const textMuted = isDark ? 'text-slate-400' : 'text-slate-500';
-  const sidebarBg = isDark
-    ? 'bg-white/[0.02] border-white/10 shadow-[20px_0_50px_rgba(0,0,0,0.2)]'
+  const sidebarBg = isDark 
+    ? 'bg-white/[0.02] border-white/10 shadow-[20px_0_50px_rgba(0,0,0,0.2)]' 
     : 'bg-white border-slate-200/80 shadow-[10px_0_40px_rgba(0,0,0,0.03)]';
-  const cardBg = isDark
-    ? 'bg-white/[0.02] border-white/10'
+  const cardBg = isDark 
+    ? 'bg-white/[0.02] border-white/10' 
     : 'bg-white border-slate-200/80 shadow-md shadow-slate-100/50';
   const cardHoverBg = isDark ? 'hover:bg-white/[0.06]' : 'hover:bg-slate-100/40';
-  const pillBg = isDark
-    ? 'bg-white/5 border-white/5 text-slate-300'
+  const pillBg = isDark 
+    ? 'bg-white/5 border-white/5 text-slate-300' 
     : 'bg-slate-200/60 border-slate-200 text-slate-700';
   const headerBg = isDark ? 'bg-slate-950/80 border-white/5' : 'bg-white/80 border-slate-200/60';
 
@@ -445,7 +451,6 @@ export default function App() {
       setTimeout(() => setSubmitSuccess(false), 4000);
     }, 1000);
   };
-
 
   if (theme.id === 'creative') {
     return (
