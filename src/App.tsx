@@ -456,8 +456,7 @@ export default function App() {
           <aside className={`w-full md:w-80 md:min-h-screen p-6 md:p-8 md:sticky md:top-0 flex flex-col backdrop-blur-[20px] ${sidebarBg}`}>
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <div className={`w-24 h-24 md:w-32 md:h-32 rounded-3xl mb-4 md:mb-6 overflow-hidden border border-slate-200 dark:border-white/20 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 ${primaryBg}/20 flex items-center justify-center text-3xl md:text-4xl font-black ${textHeading} relative group`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                {resumeData.personal.avatar.length <= 2 ? resumeData.personal.avatar : "🚀"}
+                <Hero3DModel />
               </div>
               <h1 className={`text-2xl md:text-3xl font-black ${textHeading} tracking-tight mb-2 leading-tight break-words w-full`}>{resumeData.personal.name}</h1>
               <p className={`text-xs md:text-sm font-bold uppercase tracking-widest ${primaryClass}`}>{resumeData.personal.title}</p>
