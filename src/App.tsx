@@ -68,6 +68,7 @@ interface ResumeData {
   skills: Skill[];
   education: Education[];
   certificates?: Certificate[];
+  testimonials?: any[];
 }
 
 interface ThemeSettings {
