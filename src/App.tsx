@@ -237,7 +237,16 @@ export default function App() {
       "period": "Oct 2018 - Mar 2021",
     }
   ],
-  "projects": [],
+  "projects": [
+    {
+      "id": "proj-0",
+      "title": "ProPortfolio Builder",
+      "description": "An all-in-one AI-driven resume parser, ATS compliance scanner, interactive resume coach, and professional web portfolio generator. Allows candidates to upload resumes, audit them against job listings, optimize content, customize styling, and export a fully responsive Vite + React + Tailwind CSS portfolio site.",
+      "techStack": ["React", "TypeScript", "Vite", "Tailwind CSS", "AI", "ATS", "Resume Parsing"],
+      "category": "AI Tools",
+      "featured": true
+    }
+  ],
   "certificates": [
     {
       "id": "cert-1",
