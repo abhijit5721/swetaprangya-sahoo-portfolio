@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Mesh } from 'three';
 
 interface BoxProps {
   color?: string;
 }
 
 function RotatingBox(props: BoxProps) {
-  const meshRef = useRef<Mesh>(null);
+  // avoid requiring `@types/three` here by using a generic ref type
+  const meshRef = useRef<any>(null);
   useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.x += 0.01;
