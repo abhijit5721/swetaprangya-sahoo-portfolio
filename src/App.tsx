@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { 
+import {
   Mail, Phone, MapPin, Sparkles, Menu, X, Trophy, Code
 } from 'lucide-react';
-import Hero3DModel from './components/Hero3DModel';
+// NOTE: Hero3DModel is loaded dynamically on the client to avoid bundler/SSR externalization issues
 
 interface Project {
   id: string;
@@ -445,6 +445,23 @@ export default function App() {
     }, 1000);
   };
 
+  // Dynamically load the 3D hero component on the client only to avoid SSR/bundler externalization issues
+  const [hero3D, setHero3D] = useState<React.ComponentType | null>(null);
+  useEffect(() => {
+    let mounted = true;
+    if (typeof window === 'undefined') return;
+    (async () => {
+      try {
+        const mod = await import('./components/Hero3DModel');
+        if (mounted && mod && mod.default) setHero3D(() => mod.default as React.ComponentType);
+      } catch (err) {
+        // keep fallback visible and log the error for debugging
+        console.error('Failed to dynamically import Hero3DModel:', err);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
   if (theme.id === 'creative') {
     return (
       <div className={`min-h-screen ${bgColor} ${fontClass} relative overflow-hidden transition-colors duration-500`}>
@@ -456,9 +473,15 @@ export default function App() {
         <div className="relative z-10 flex flex-col md:flex-row min-h-screen">
           <aside className={`w-full md:w-80 md:min-h-screen p-6 md:p-8 md:sticky md:top-0 flex flex-col backdrop-blur-[20px] ${sidebarBg}`}>
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <div className={`w-24 h-24 md:w-32 md:h-32 rounded-3xl mb-4 md:mb-6 overflow-hidden border border-slate-200 dark:border-white/20 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 ${primaryBg}/20 flex items-center justify-center text-3xl md:text-4xl font-black ${textHeading} relative group`}>
-                <Hero3DModel />
-              </div>
+                <div className={`w-24 h-24 md:w-32 md:h-32 rounded-3xl mb-4 md:mb-6 overflow-hidden border border-slate-200 dark:border-white/20 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 ${primaryBg}/20 flex items-center justify-center text-3xl md:text-4xl font-black ${textHeading} relative group`}>
+                  {hero3D ? (
+                    <React.Suspense fallback={<div className="w-full h-full flex items-center justify-center">SS</div>}>
+                      {React.createElement(hero3D)}
+                    </React.Suspense>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">SS</div>
+                  )}
+                </div>
               <h1 className={`text-2xl md:text-3xl font-black ${textHeading} tracking-tight mb-2 leading-tight break-words w-full`}>{resumeData.personal.name}</h1>
               <p className={`text-xs md:text-sm font-bold uppercase tracking-widest ${primaryClass}`}>{resumeData.personal.title}</p>
               
