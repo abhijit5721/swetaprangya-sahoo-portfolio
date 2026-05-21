@@ -514,7 +514,7 @@ export default function App() {
           <main className="flex-1 p-5 md:p-16 max-w-5xl overflow-hidden">
             <section id="about" className="mb-16 md:mb-24 animate-fadeIn scroll-slide scroll-mt-20">
               <h2 className={`text-3xl md:text-6xl font-black ${textHeading} mb-6 md:mb-8 leading-tight tracking-tighter`}>
-                Crafting <span className={`${primaryClass} underline decoration-slate-200 dark:decoration-white/10 decoration-8 underline-offset-4`}>impactful</span> digital products.
+                Solving <span className={`${primaryClass} underline decoration-slate-200 dark:decoration-white/10 decoration-8 underline-offset-4`}>complex</span> technical challenges.
               </h2>
               <div className={`backdrop-blur-md ${cardBg} border rounded-2xl md:rounded-3xl p-6 md:p-10 relative overflow-hidden group`}>
                 <div className={`absolute -right-10 -bottom-10 w-40 h-40 ${primaryBg} opacity-5 blur-3xl rounded-full`}></div>
